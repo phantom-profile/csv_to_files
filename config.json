@@ -2,5 +2,6 @@
   "csv": "from.csv",
   "template": "template.j2",
   "work_dir": ".",
-  "filename": "{field1}.{field23}"
+  "filename": "{FIELD_101}.{FIELD_102}",
+  "delimiter": ";"
 }

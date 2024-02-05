@@ -17,6 +17,7 @@ class Config:
         self.csv = self.work_dir / raw_config.get("csv")
         self.template = self.work_dir / raw_config.get("template")
         self.filename: str = raw_config.get("filename")
+        self.delimiter: str = raw_config.get("delimiter", ",")
         self.output_dir = self._build_dir()
         self._validate_config()
 
@@ -61,7 +62,7 @@ class FilesBuilder:
 
     def call(self):
         with self.config.csv.open(newline='') as csvfile:
-            reader = DictReader(csvfile)
+            reader = DictReader(csvfile, delimiter=self.config.delimiter)
             for i, row in enumerate(reader):
                 self._build_file(row, i)
 
