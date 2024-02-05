@@ -1,0 +1,6 @@
+{
+  "csv": "from.csv",
+  "template": "template.j2",
+  "work_dir": ".",
+  "filename": "{field1}.{field23}"
+}
